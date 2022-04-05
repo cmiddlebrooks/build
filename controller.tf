@@ -14,12 +14,12 @@ provider "aws" {
 
 
 data "aws_caller_identity" "current" {}
-
+/*
 module "aviatrix-iam-roles" {
   source = "github.com/AviatrixSystems/terraform-modules.git//aviatrix-controller-iam-roles?ref=terraform_0.14"
 }
 
-/*
+
 Controller build prerequisites
 # Existing VPC,
 Public subnet,
@@ -33,7 +33,7 @@ module "aviatrix-controller-build" {
   vpc               = module.vpc.vpc_id
   subnet            = module.vpc.public_subnets[0]
   keypair           = var.keypair
-  ec2role           = module.aviatrix-iam-roles.aviatrix-role-ec2-name
+  ec2role           = var.ec2role
   incoming_ssl_cidr = var.incoming_ssl_cidr
 
 }

@@ -24,6 +24,12 @@ variable "vpc_azs" {
   type        = list(string)
   default     = ["us-east-1a"]
 }
+variable "ec2role" {
+  description = "existing iam role - if not there, uncomment module iam_roles"
+  type        = string
+  default     = "aviatrix-role-ec2"
+}
+
 variable "incoming_ssl_cidr" {
   type    = list(string)
   default = ["24.18.151.237/32"]
